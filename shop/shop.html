@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <link rel="stylesheet" href="shop.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Shop</title>
+    </head>
+
+    <header>
+        <img src="../eldenring_new.png" alt="alt">
+        <nav>
+            <a href="../homepage/homepage.html">Home</a>
+            <a class="active" href="shop.html">Shop</a>
+            <a href="../dlc/dlc.html">DLC</a>
+            <a href="../sources/sources.html">Sources</a>
+        </nav>
+    </header>
+
+    <body>
+        <form>
+            <p>Do you want to buy Elden Ring? (&euro;59,99)</p>
+            <input type="radio" id="elden_ja" name="elden_ring" value="yes">
+            <label for="elden_ja">yes</label><br>
+            <input type="radio" id="elden_nee" name="elden_ring" value="no">
+            <label for="elden_nee">no</label><br>
+
+            <p>Do you want to pre-order the DLC? (&euro;39,99)</p>
+            <input type="radio" id="shadow_ja" name="shadow" value="yes">
+            <label for="shadow_ja">yes</label><br>
+            <input type="radio" id="shadow_nee" name="shadow" value="no">
+            <label for="shadow_nee">no</label><br>
+
+            <p>For which console are you buying the game?</p>
+            <input type="radio" id="pc" name="console" value="pc">
+            <label for="pc">pc</label><br>
+            <input type="radio" id="xbox" name="console" value="xbox">
+            <label for="xbox">xbox</label><br>
+            <input type="radio" id="playstation" name="console" value="playstation">
+            <label for="playstation">playstation</label><br>
+
+            <label for="fname">First name:</label>
+            <input class="text" type="text" id="fname" name="fname"><br>
+
+            <label for="lname">Last name:</label>
+            <input class="text" type="text" id="lname" name="lname"><br>
+
+            <label for="email">Country:</label>
+            <input class="text" type="text" id="email" name="email"><br>
+
+            <label for="country">Country:</label>
+            <input class="text" type="text" id="country" name="country"><br>
+
+            <label for="city">City:</label>
+            <input class="text" type="text" id="city" name="city"><br>
+
+            <label for="address">Address:</label>
+            <input class="text" type="text" id="address" name="address"><br>
+
+            <label for="card">Credit card number:</label>
+            <input class="card" type="text" id="card" name="card"><br>
+
+            <button type="button" onclick="verzenden()">Confirm</button>
+        </form>
+
+        <p id="resultaat"></p>
+        <p id="check"></p>
+        <button class="submit" id="submit" name="submit" onclick="confirm()">Send</button>
+    </body>
+
+    <section class="popup" onclick="confirm()">
+        <p class="popuptext" id="myPopup">Your order has been successfully received! You will be redirected to the home page.</p>
+    </section>
+</html>
+
+<script>
+    function verzenden() {
+        if (!document.getElementById("elden_ja").checked && !document.getElementById("shadow_ja").checked) {
+            document.getElementById("resultaat").style.backgroundColor = "red";
+            document.getElementById("resultaat").style.color = "black";
+            document.getElementById("resultaat").innerHTML = "You have to select an article!";
+        } else if (!document.getElementById("pc").checked && !document.getElementById("xbox").checked && !document.getElementById("playstation").checked) {
+            document.getElementById("resultaat").style.backgroundColor = "red";
+            document.getElementById("resultaat").style.color = "black";
+            document.getElementById("resultaat").innerHTML = "You have to select a console!";
+        } else if (document.getElementById("fname").value === "" ||
+            document.getElementById("lname").value === "" ||
+            document.getElementById("email").value === "" ||
+            document.getElementById("country").value === "" ||
+            document.getElementById("city").value === "" ||
+            document.getElementById("address").value === "" ||
+            document.getElementById("card").value === "") {
+            document.getElementById("resultaat").style.backgroundColor = "red";
+            document.getElementById("resultaat").style.color = "black";
+            document.getElementById("resultaat").innerHTML = "One or more fields are empty!";
+        } else {
+            var price = 0;
+            if (document.getElementById("elden_ja").checked) {
+                price = price + 59.99;
+            }
+            if (document.getElementById("shadow_ja").checked) {
+                price = price + 39.99;
+            }
+            document.getElementById("resultaat").style.backgroundColor = "green";
+            document.getElementById("resultaat").style.color = "black";
+            document.getElementById("resultaat").innerHTML = "The total price will be: " + price;
+
+            document.getElementById("check").style.backgroundColor = "green";
+            document.getElementById("check").style.color = "black";
+            document.getElementById("check").innerHTML = "Please make sure everything is filled in correctly and click send.";
+
+            document.getElementById("submit").style.display = "block";
+        }
+    }
+
+    function confirm() {
+        document.getElementById("myPopup").classList.toggle("show");
+        setTimeout(() => {
+            window.location.href="../homepage/homepage.html";
+        }, 5000);
+    }
+</script>

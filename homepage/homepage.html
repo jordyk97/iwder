@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="homepage.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Home</title>
+    </head>
+
+    <header>
+        <img src="../eldenring_new.png" alt="image not visible">
+        <nav>
+            <a class="active" href="homepage.html">Home</a>
+            <a href="../shop/shop.html">Shop</a>
+            <a href="../dlc/dlc.html">DLC</a>
+            <a href="../sources/sources.html">Sources</a>
+        </nav>
+    </header>
+
+    <body>
+        <section class="intro">
+            <article>
+            <h1>The Golden Order has been broken.</h1>
+            <p>Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.</p>
+            <p>In the Lands Between ruled by Queen Marika the Eternal, the Elden Ring, the source of the Erdtree, has been shattered.</p>
+            <p>Marika's offspring, demigods all, claimed the shards of the Elden Ring known as the Great Runes, and the mad
+                taint of their newfound strength triggered a war: The Shattering. A war that meant abandonment by the Greater Will.</p>
+            <p>And now the guidance of grace will be brought to the Tarnished who were spurned by the grace of gold and exiled from the Lands Between.
+                Ye dead who yet live, your grace long lost, follow the path to the Lands Between beyond the foggy sea to stand before the Elden Ring.</p>
+            </article>
+
+        <img src="../elden-ring.webp" alt="image not visible">
+        </section>
+
+        <section class="explanation">
+            <section class="videos">
+                <iframe width="420" height="315" src="https://www.youtube.com/embed/qqiC88f9ogU"></iframe>
+                <iframe width="420" height="315" src="https://www.youtube.com/embed/E3Huy2cdih0"></iframe>
+            </section>
+            <article>
+                <h1>What is Elden Ring?</h1>
+                <p>Elden Ring is a 2022 action role-playing game developed by FromSoftware. It was directed by Hidetaka Miyazaki with worldbuilding provided
+                    by fantasy writer George R. R. Martin. It was published for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on February
+                    25 by FromSoftware in Japan and Bandai Namco Entertainment internationally. Players control a customizable player character who is on a quest
+                    to repair the Elden Ring and become the new Elden Lord.</p>
+                <p>Elden Ring is presented through a third-person perspective; players freely roam its interactive open world. The six main areas are traversed
+                    using the player character's steed Torrent as the primary mode of travel. Linear, hidden dungeons can be explored to find useful items. Players
+                    can use several types of weapons and magic spells, including non-direct engagement enabled by stealth mechanics. Throughout the game's world,
+                    checkpoints enable fast travel and allow players to improve their attributes using an in-game currency called runes. Elden Ring features an online
+                    multiplayer mode in which players join through cooperative play to fight bosses or engage player-versus-player combat.</p>
+                <p>FromSoftware wanted to create an open-world game based on Dark Souls. Miyazaki admired Martin's previous work, and hoped that his contributions
+                    would produce a more accessible narrative than those of the company's earlier games. Martin was given unrestricted freedom to design the backstory
+                    while Miyazaki was lead writer for the in-game narrative. The developers concentrated on environmental scale, role-playing, and the story; the scale
+                    required the construction of several structures inside the open world.</p>
+                <p>Elden Ring received critical acclaim for its open world, gameplay systems, and setting, with some criticism for its technical performance. It won
+                    several Game of the Year awards and has sold 23 million copies. A downloadable content expansion, Shadow of the Erdtree, is planned to be released
+                    in June 2024.</p>
+            </article>
+        </section>
+    </body>
+
+    <footer>
+        <p>Elden Ring is available for purchase in the shop</p>
+    </footer>
+</html>
+<script>
+    document.getElementById("nummer").innerHTML = localStorage.getItem("nummer");
+</script>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyDhBpuTF4XxTMSVASNNXxwZpB9GogSDlII",
+        authDomain: "iwder-jordy.firebaseapp.com",
+        projectId: "iwder-jordy",
+        storageBucket: "iwder-jordy.appspot.com",
+        messagingSenderId: "843222932006",
+        appId: "1:843222932006:web:567768520f363f6bb124e7"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+</script>
